@@ -1,0 +1,12 @@
+#myForm {
+    background: lightgray;
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+}
+#addContactForm {
+    background: lightgray;
+    width: 350px;
+    height: 450px;
+    padding: 20px;
+}
