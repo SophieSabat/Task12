@@ -14,11 +14,6 @@
 // }
 
 
-
-
-
-
-
 // - Дана форма с инпутами, текстареа, чекбоксами, радио кнопочками, селектами и тп.
 //     Пользователь вводит какие-то данные и закрывает страницу (не факт, что он заполнил всю форму).
 // Сделайте так, чтобы при следующем заходе на страницу введенные им ранее данные стояли на своих местах.
@@ -54,11 +49,6 @@
 // saveInputData(document.forms.myForm.radioTwo);
 
 
-
-
-
-
-
 // -Дан текстареа. В него можно ввести данные, нажать кнопку "сохранить" и они "фикисруются" (в хранилище), затем поредактировать их,
 // затем еще поредактировать и возможно еще.....
 // Требование : хранить историю своих изменений (даже после перезагрузки страницы).
@@ -85,36 +75,33 @@
 // document.body.appendChild(button);
 //
 //
+// let key = 0;
+// const init_value = localStorage.getItem(key);
+//
+// if (init_value) textarea.value = init_value;
+//
+//
 // button.onclick = () => {
 //     localStorage.setItem(localStorage.length++, textarea.value);
+//     key = localStorage.length - 1;
 // }
 //
 //
-// btnLeft.onclick = () => {
-//     let index;
-//     for (const key in localStorage) {
-//         if (localStorage.getItem(key) === textarea.value) {
-//             index = key;
-//         }
-//     }
-//     if (index === '0') {
-//         index = localStorage.length;
-//     }
-//     textarea.value = localStorage.getItem(index - 1);
-// }
+// btnLeft.onclick = () => navigate(-1);
 //
-// btnRight.onclick = () => {
-//     let index;
-//     for (const key in localStorage) {
+// btnRight.onclick = () => navigate(1);
 //
-//         if (localStorage.getItem(key) === textarea.value) {
-//             index = key;
-//         }
-//     }
-//     if (index === localStorage.length.toString()) {
-//         index = 0;
-//     }
-//     textarea.value = localStorage.getItem(parseInt(index) + 1);
+//
+//
+// function navigate(step) {
+//     key += step;
+//
+//     const lastKey = localStorage.length - 1;
+//
+//     if (key > lastKey) key = 0;
+//     if (key < 0) key = lastKey;
+//
+//     textarea.value = localStorage.getItem(key);
 // }
 
 
